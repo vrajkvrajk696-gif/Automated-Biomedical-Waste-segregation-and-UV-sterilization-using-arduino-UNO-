@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,111 +8,161 @@
     <title>Automated Biomedical Waste Management</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             line-height: 1.7;
             background: #f4f7f9;
             color: #222;
         }
 
+        /* HEADER */
+
         header {
-            background: #123c69;
+            background: linear-gradient(135deg, #123c69, #176b87);
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 70px 20px;
         }
 
         header h1 {
-            font-size: 35px;
+            font-size: 40px;
             margin-bottom: 15px;
         }
 
         header p {
-            font-size: 18px;
+            font-size: 20px;
         }
+
+        /* NAVIGATION */
 
         nav {
             background: white;
-            padding: 15px;
+            padding: 16px;
             text-align: center;
             position: sticky;
             top: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
         }
 
         nav a {
             text-decoration: none;
             color: #123c69;
-            margin: 0 10px;
+            margin: 0 9px;
             font-weight: bold;
+            display: inline-block;
+            padding: 5px;
         }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTAINER */
 
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 30px 20px;
+            padding: 35px 20px;
         }
+
+        /* SECTIONS */
 
         section {
             background: white;
-            margin-bottom: 25px;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            padding: 35px;
+            border-radius: 14px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         }
 
-        h2 {
+        section h2 {
             color: #123c69;
-            margin-bottom: 18px;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 8px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e1e1e1;
         }
 
-        h3 {
-            margin-top: 20px;
+        section h3 {
             color: #245b8c;
+            margin-bottom: 10px;
         }
 
-        ul, ol {
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul,
+        ol {
             padding-left: 25px;
         }
 
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
+
+        /* HIGHLIGHT BOX */
+
+        .highlight {
+            background: #eef6ff;
+            padding: 20px;
+            border-left: 5px solid #123c69;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        /* CARDS */
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 20px;
         }
 
         .card {
-            background: #f4f7f9;
-            padding: 20px;
-            border-radius: 10px;
+            background: #f5f8fa;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s;
         }
 
-        .card h3 {
-            margin-top: 0;
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card p {
+            margin-bottom: 10px;
+        }
+
+        /* TABLE */
+
+        .table-container {
+            overflow-x: auto;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
+            min-width: 600px;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
-            padding: 12px;
+            padding: 13px;
             text-align: left;
         }
 
@@ -120,383 +171,991 @@
             color: white;
         }
 
-        .highlight {
-            background: #eef6ff;
-            padding: 20px;
-            border-left: 5px solid #123c69;
-            margin-top: 15px;
+        tr:nth-child(even) {
+            background: #f7f7f7;
         }
+
+        /* AUTHOR */
+
+        .author-card {
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+            background: #f5f8fa;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .author-icon {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+
+        .author-card h3 {
+            font-size: 28px;
+            color: #123c69;
+            margin-bottom: 15px;
+        }
+
+        .author-details {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .author-details p {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .author-details strong {
+            color: #123c69;
+        }
+
+        /* LINKS */
+
+        a {
+            color: #176b87;
+        }
+
+        /* STATUS */
+
+        .status {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 20px;
+            background: #e7f6ea;
+            border: 1px solid #b9dfbf;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
 
         footer {
             background: #123c69;
             color: white;
             text-align: center;
-            padding: 30px 15px;
+            padding: 35px 15px;
         }
 
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* MOBILE */
+
         @media (max-width: 600px) {
+
+            header {
+                padding: 50px 15px;
+            }
+
             header h1 {
-                font-size: 26px;
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 17px;
+            }
+
+            nav {
+                padding: 10px;
             }
 
             nav a {
-                display: inline-block;
-                margin: 5px;
-                font-size: 14px;
+                font-size: 13px;
+                margin: 3px;
             }
 
             section {
-                padding: 20px;
+                padding: 22px;
             }
 
-            table {
-                font-size: 14px;
+            section h2 {
+                font-size: 22px;
             }
+
+            .author-card {
+                padding: 25px 18px;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-    <h1>Automated Biomedical Waste Management</h1>
-    <p>Using Arduino and UV Sterilization</p>
+
+    <h1>
+        Automated Biomedical Waste Management
+    </h1>
+
+    <p>
+        Using Arduino and UV Sterilization
+    </p>
+
 </header>
 
+
+<!-- NAVIGATION -->
+
 <nav>
+
     <a href="#overview">Overview</a>
+
+    <a href="#abstract">Abstract</a>
+
+    <a href="#introduction">Introduction</a>
+
+    <a href="#motivation">Motivation</a>
+
     <a href="#objectives">Objectives</a>
+
     <a href="#working">Working</a>
+
     <a href="#components">Components</a>
+
+    <a href="#technology">Technology</a>
+
     <a href="#applications">Applications</a>
+
+    <a href="#advantages">Advantages</a>
+
+    <a href="#limitations">Limitations</a>
+
     <a href="#future">Future Scope</a>
+
+    <a href="#authors">Author</a>
+
 </nav>
+
+
 
 <div class="container">
 
-    <section id="overview">
-        <h2>📌 Project Overview</h2>
 
-        <p>
+<!-- PROJECT OVERVIEW -->
+
+<section id="overview">
+
+    <h2>📌 Project Overview</h2>
+
+    <p>
+        <strong>
             Automated Biomedical Waste Management Using Arduino and UV
-            Sterilization is a smart waste-management system designed to
-            automate the segregation of biomedical waste.
-        </p>
+            Sterilization
+        </strong>
+        is a smart waste-management system designed to automate the
+        handling, sterilization and segregation of biomedical waste.
+    </p>
 
-        <p>
-            The system uses an Arduino UNO, sensors, conveyor belt, servo
-            motor, DC motor and UV sterilization to improve the safety,
-            efficiency and hygiene of biomedical waste handling.
-        </p>
+    <p>
+        The system uses an Arduino UNO, sensors, conveyor belt,
+        motors, sorting mechanism and UV sterilization to develop
+        an automated prototype for safer biomedical waste management.
+    </p>
 
-        <div class="highlight">
-            <strong>Project Goal:</strong>
-            To develop a low-cost automated system for safer biomedical
-            waste handling and segregation.
-        </div>
-    </section>
+    <div class="highlight">
 
+        <strong>Project Goal:</strong>
 
-    <section id="abstract">
-        <h2>📄 Abstract</h2>
+        To develop a low-cost automated system that can assist in
+        safer biomedical waste handling, sterilization and segregation.
 
-        <p>
-            Biomedical waste requires proper handling and segregation because
-            improper management can create health and environmental risks.
-            This project proposes an automated biomedical waste management
-            system using Arduino UNO, sensors, conveyor mechanism and UV
-            sterilization.
-        </p>
+    </div>
 
-        <p>
-            The system detects and identifies waste characteristics and
-            directs the waste into appropriate collection categories.
-            UV sterilization is incorporated to reduce contamination on
-            exposed surfaces before the segregation process.
-        </p>
-    </section>
+</section>
 
 
-    <section id="introduction">
-        <h2>📖 Introduction</h2>
 
-        <p>
-            Biomedical waste is generated in hospitals, clinics, laboratories,
-            diagnostic centers and other healthcare facilities. Manual
-            segregation can expose workers to potentially contaminated
-            materials.
-        </p>
+<!-- ABSTRACT -->
 
-        <p>
-            Automation can reduce direct human handling and improve the
-            organization of waste collection. This project combines sensor
-            technology, Arduino control, conveyor transportation and UV
-            sterilization.
-        </p>
-    </section>
+<section id="abstract">
 
+    <h2>📄 Abstract</h2>
 
-    <section id="motivation">
-        <h2>💡 Motivation</h2>
+    <p>
+        Biomedical waste requires proper handling and segregation
+        because improper management can create health and environmental
+        risks. Manual segregation may also expose workers to potentially
+        contaminated materials.
+    </p>
 
-        <ul>
-            <li>Reduce manual handling of biomedical waste.</li>
-            <li>Improve workplace safety and hygiene.</li>
-            <li>Reduce errors during waste segregation.</li>
-            <li>Develop an affordable prototype.</li>
-            <li>Explore automation in biomedical waste management.</li>
-        </ul>
-    </section>
+    <p>
+        This project proposes an automated biomedical waste management
+        system using Arduino UNO, sensors, conveyor mechanism,
+        sorting mechanism and UV sterilization.
+    </p>
+
+    <p>
+        The system detects waste characteristics and assists in
+        directing waste into appropriate collection categories.
+        UV sterilization is incorporated to reduce contamination
+        on exposed surfaces before the segregation process.
+    </p>
+
+</section>
 
 
-    <section id="objectives">
-        <h2>🎯 Objectives</h2>
 
-        <ul>
-            <li>Automate biomedical waste segregation.</li>
-            <li>Reduce human exposure to potentially contaminated waste.</li>
-            <li>Use UV sterilization before waste segregation.</li>
-            <li>Detect different characteristics of waste.</li>
-            <li>Improve the efficiency of waste handling.</li>
-            <li>Develop a low-cost and compact automated system.</li>
-        </ul>
-    </section>
+<!-- INTRODUCTION -->
 
+<section id="introduction">
 
-    <section id="working">
-        <h2>⚙️ Working of the Project</h2>
+    <h2>📖 Introduction</h2>
 
-        <ol>
-            <li>Biomedical waste is placed on the conveyor belt.</li>
-            <li>The conveyor transports the waste through the system.</li>
-            <li>The waste passes through the UV sterilization chamber.</li>
-            <li>Sensors detect the presence and characteristics of the waste.</li>
-            <li>Arduino UNO processes the sensor information.</li>
-            <li>The Arduino controls the sorting mechanism.</li>
-            <li>The waste is directed into the appropriate collection category.</li>
-            <li>The segregated waste can then be handled appropriately.</li>
-        </ol>
-    </section>
+    <p>
+        Biomedical waste is generated in hospitals, clinics,
+        laboratories, diagnostic centers and other healthcare
+        facilities.
+    </p>
+
+    <p>
+        Proper segregation and handling are important for reducing
+        unnecessary exposure and improving waste-management practices.
+    </p>
+
+    <p>
+        This project combines embedded-system control, sensors,
+        conveyor transportation, motor control and UV sterilization
+        into an automated prototype.
+    </p>
+
+</section>
 
 
-    <section id="components">
-        <h2>🔧 Components Used</h2>
+
+<!-- MOTIVATION -->
+
+<section id="motivation">
+
+    <h2>💡 Motivation</h2>
+
+    <ul>
+
+        <li>
+            Reduce manual handling of biomedical waste.
+        </li>
+
+        <li>
+            Improve workplace safety and hygiene.
+        </li>
+
+        <li>
+            Reduce errors during waste segregation.
+        </li>
+
+        <li>
+            Develop a low-cost automation prototype.
+        </li>
+
+        <li>
+            Explore automation technology for biomedical waste management.
+        </li>
+
+    </ul>
+
+</section>
+
+
+
+<!-- OBJECTIVES -->
+
+<section id="objectives">
+
+    <h2>🎯 Objectives</h2>
+
+    <ul>
+
+        <li>
+            Automate biomedical waste segregation.
+        </li>
+
+        <li>
+            Reduce direct human handling of potentially contaminated waste.
+        </li>
+
+        <li>
+            Incorporate UV sterilization into the waste-handling process.
+        </li>
+
+        <li>
+            Detect different characteristics of waste using sensors.
+        </li>
+
+        <li>
+            Control the system using an Arduino microcontroller.
+        </li>
+
+        <li>
+            Develop a compact and economical prototype.
+        </li>
+
+    </ul>
+
+</section>
+
+
+
+<!-- WORKING -->
+
+<section id="working">
+
+    <h2>⚙️ Working of the Project</h2>
+
+    <ol>
+
+        <li>
+            Biomedical waste is placed on the conveyor belt.
+        </li>
+
+        <li>
+            The conveyor transports the waste through the system.
+        </li>
+
+        <li>
+            The waste passes through the UV sterilization section.
+        </li>
+
+        <li>
+            Sensors detect the presence and characteristics of the waste.
+        </li>
+
+        <li>
+            Arduino UNO receives and processes sensor information.
+        </li>
+
+        <li>
+            The Arduino controls the motors and sorting mechanism.
+        </li>
+
+        <li>
+            Waste is directed toward the appropriate collection category.
+        </li>
+
+        <li>
+            The segregated waste can then be handled according to
+            applicable biomedical-waste procedures.
+        </li>
+
+    </ol>
+
+</section>
+
+
+
+<!-- COMPONENTS -->
+
+<section id="components">
+
+    <h2>🔧 Components Used</h2>
+
+    <div class="table-container">
 
         <table>
+
             <tr>
-                <th>Component</th>
-                <th>Purpose</th>
+
+                <th>
+                    Component
+                </th>
+
+                <th>
+                    Purpose
+                </th>
+
             </tr>
 
             <tr>
-                <td>Arduino UNO</td>
-                <td>Main controller</td>
+
+                <td>
+                    Arduino UNO
+                </td>
+
+                <td>
+                    Main controller
+                </td>
+
             </tr>
 
             <tr>
-                <td>Ultrasonic Sensor</td>
-                <td>Object/distance detection</td>
+
+                <td>
+                    Ultrasonic Sensor
+                </td>
+
+                <td>
+                    Object/distance detection
+                </td>
+
             </tr>
 
             <tr>
-                <td>Moisture Sensor</td>
-                <td>Moisture detection</td>
+
+                <td>
+                    Moisture Sensor
+                </td>
+
+                <td>
+                    Moisture detection
+                </td>
+
             </tr>
 
             <tr>
-                <td>IR Sensor</td>
-                <td>Object detection</td>
+
+                <td>
+                    IR Sensor
+                </td>
+
+                <td>
+                    Object detection
+                </td>
+
             </tr>
 
             <tr>
-                <td>Metal Sensor</td>
-                <td>Metal detection</td>
+
+                <td>
+                    Metal Sensor
+                </td>
+
+                <td>
+                    Metal detection
+                </td>
+
             </tr>
 
             <tr>
-                <td>Conveyor Belt</td>
-                <td>Waste transportation</td>
+
+                <td>
+                    Conveyor Belt
+                </td>
+
+                <td>
+                    Waste transportation
+                </td>
+
             </tr>
 
             <tr>
-                <td>UV Sterilization Lamp</td>
-                <td>Surface sterilization</td>
+
+                <td>
+                    UV Sterilization Lamp
+                </td>
+
+                <td>
+                    Surface sterilization
+                </td>
+
             </tr>
 
             <tr>
-                <td>Servo Motor</td>
-                <td>Sorting mechanism</td>
+
+                <td>
+                    Servo Motor
+                </td>
+
+                <td>
+                    Sorting mechanism
+                </td>
+
             </tr>
 
             <tr>
-                <td>DC Motor</td>
-                <td>Conveyor operation</td>
+
+                <td>
+                    DC Motor
+                </td>
+
+                <td>
+                    Conveyor operation
+                </td>
+
             </tr>
 
             <tr>
-                <td>PWM Motor Speed Controller</td>
-                <td>Motor speed control</td>
+
+                <td>
+                    PWM Motor Speed Controller
+                </td>
+
+                <td>
+                    Motor speed control
+                </td>
+
             </tr>
 
             <tr>
-                <td>12V DC Adapter</td>
-                <td>Power supply</td>
+
+                <td>
+                    12V DC Adapter
+                </td>
+
+                <td>
+                    Power supply
+                </td>
+
             </tr>
 
             <tr>
-                <td>Jumper Wires</td>
-                <td>Electrical connections</td>
+
+                <td>
+                    Jumper Wires
+                </td>
+
+                <td>
+                    Electrical connections
+                </td>
+
             </tr>
+
         </table>
-    </section>
+
+    </div>
+
+</section>
 
 
-    <section id="technology">
-        <h2>💻 Technologies Used</h2>
 
-        <div class="cards">
+<!-- TECHNOLOGY -->
 
-            <div class="card">
-                <h3>Embedded C/C++</h3>
-                <p>Programming and control of the Arduino system.</p>
-            </div>
+<section id="technology">
 
-            <div class="card">
-                <h3>Arduino IDE</h3>
-                <p>Development and uploading of the microcontroller program.</p>
-            </div>
+    <h2>💻 Technologies Used</h2>
 
-            <div class="card">
-                <h3>Sensor Interfacing</h3>
-                <p>Detection of different waste characteristics.</p>
-            </div>
+    <div class="cards">
 
-            <div class="card">
-                <h3>PWM Control</h3>
-                <p>Control of DC motor speed.</p>
-            </div>
+
+        <div class="card">
+
+            <h3>
+                Embedded C / C++
+            </h3>
+
+            <p>
+                Used for programming and controlling the Arduino system.
+            </p>
 
         </div>
-    </section>
 
 
-    <section id="applications">
-        <h2>🏥 Applications</h2>
+        <div class="card">
 
-        <div class="cards">
+            <h3>
+                Arduino IDE
+            </h3>
 
-            <div class="card">
-                <h3>Hospitals</h3>
-                <p>Automated handling and segregation of biomedical waste.</p>
-            </div>
-
-            <div class="card">
-                <h3>Clinics</h3>
-                <p>Improved organization of waste collection.</p>
-            </div>
-
-            <div class="card">
-                <h3>Diagnostic Centers</h3>
-                <p>Automated handling of laboratory-related waste.</p>
-            </div>
-
-            <div class="card">
-                <h3>Medical Laboratories</h3>
-                <p>Support for safer waste management procedures.</p>
-            </div>
-
-            <div class="card">
-                <h3>Pharmacies</h3>
-                <p>Potential application for automated waste handling.</p>
-            </div>
-
-            <div class="card">
-                <h3>Research Laboratories</h3>
-                <p>Prototype application for controlled waste segregation.</p>
-            </div>
+            <p>
+                Used for developing and uploading the microcontroller
+                program.
+            </p>
 
         </div>
-    </section>
 
 
-    <section id="advantages">
-        <h2>✅ Advantages</h2>
+        <div class="card">
 
-        <ul>
-            <li>Reduces manual handling of biomedical waste.</li>
-            <li>Improves workplace safety and hygiene.</li>
-            <li>Reduces human sorting errors.</li>
-            <li>Provides automated waste segregation.</li>
-            <li>Uses a relatively low-cost system.</li>
-            <li>Provides organized waste management.</li>
-            <li>Reduces direct human contact with potentially contaminated waste.</li>
-        </ul>
-    </section>
+            <h3>
+                Sensor Interfacing
+            </h3>
 
+            <p>
+                Used for detecting different characteristics of waste.
+            </p>
 
-    <section id="limitations">
-        <h2>⚠️ Limitations</h2>
-
-        <ul>
-            <li>UV sterilization mainly affects exposed surfaces.</li>
-            <li>Some microorganisms may survive the sterilization process.</li>
-            <li>Sensors may have difficulty identifying mixed or unusual waste.</li>
-            <li>The system depends on electrical power.</li>
-            <li>The current prototype supports a limited number of waste categories.</li>
-        </ul>
-    </section>
-
-
-    <section id="future">
-        <h2>🚀 Future Scope</h2>
-
-        <ul>
-            <li>IoT-based monitoring.</li>
-            <li>Real-time waste-level monitoring.</li>
-            <li>Mobile application integration.</li>
-            <li>Cloud-based data storage.</li>
-            <li>AI-based waste identification.</li>
-            <li>Automatic alerts when collection bins are full.</li>
-            <li>Data analytics and reporting.</li>
-        </ul>
-    </section>
-
-
-    <section id="status">
-        <h2>📊 Project Status</h2>
-
-        <div class="highlight">
-            <strong>Status:</strong> Prototype / Development
         </div>
 
-        <p>
-            The system is being developed and tested for automated biomedical
-            waste detection, UV sterilization and waste segregation.
-        </p>
-    </section>
+
+        <div class="card">
+
+            <h3>
+                Motor Control
+            </h3>
+
+            <p>
+                Used for conveyor movement and waste sorting.
+            </p>
+
+        </div>
 
 
-    <section id="author">
-        <h2>👨‍💻 Author</h2>
+        <div class="card">
 
-        <p><strong>Vivekanand Raju Keralli
-                   University BDT college of Engineering 
-                   Davangere
-                   7676496658</strong></p>
+            <h3>
+                PWM Control
+            </h3>
 
-        <p>
-            This project is developed as an educational and engineering
-            prototype for automated biomedical waste management.
-        </p>
-    </section>
+            <p>
+                Used for controlling DC motor speed.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                UV Sterilization
+            </h3>
+
+            <p>
+                Incorporated for surface sterilization within the prototype.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- APPLICATIONS -->
+
+<section id="applications">
+
+    <h2>🏥 Applications</h2>
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>
+                Hospitals
+            </h3>
+
+            <p>
+                Automated handling and segregation of biomedical waste.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Clinics
+            </h3>
+
+            <p>
+                Support for organized waste collection.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Diagnostic Centers
+            </h3>
+
+            <p>
+                Automated handling of laboratory-related waste.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Medical Laboratories
+            </h3>
+
+            <p>
+                Support for controlled waste-management procedures.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Pharmacies
+            </h3>
+
+            <p>
+                Potential application for automated waste handling.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Research Laboratories
+            </h3>
+
+            <p>
+                Prototype application for controlled waste segregation.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ADVANTAGES -->
+
+<section id="advantages">
+
+    <h2>✅ Advantages</h2>
+
+    <ul>
+
+        <li>
+            Reduces manual handling of biomedical waste.
+        </li>
+
+        <li>
+            Supports improved workplace safety and hygiene.
+        </li>
+
+        <li>
+            Reduces manual sorting effort.
+        </li>
+
+        <li>
+            Provides automated waste segregation.
+        </li>
+
+        <li>
+            Uses a relatively low-cost prototype architecture.
+        </li>
+
+        <li>
+            Provides organized waste handling.
+        </li>
+
+        <li>
+            Reduces direct human contact during the automated process.
+        </li>
+
+    </ul>
+
+</section>
+
+
+
+<!-- LIMITATIONS -->
+
+<section id="limitations">
+
+    <h2>⚠️ Limitations</h2>
+
+    <ul>
+
+        <li>
+            UV sterilization mainly affects exposed surfaces.
+        </li>
+
+        <li>
+            Sterilization performance depends on exposure conditions
+            and system design.
+        </li>
+
+        <li>
+            Sensors may have difficulty identifying mixed or unusual waste.
+        </li>
+
+        <li>
+            The system depends on electrical power.
+        </li>
+
+        <li>
+            The prototype supports a limited number of waste categories.
+        </li>
+
+    </ul>
+
+</section>
+
+
+
+<!-- FUTURE SCOPE -->
+
+<section id="future">
+
+    <h2>🚀 Future Scope</h2>
+
+    <ul>
+
+        <li>
+            IoT-based monitoring.
+        </li>
+
+        <li>
+            Real-time waste-level monitoring.
+        </li>
+
+        <li>
+            Mobile application integration.
+        </li>
+
+        <li>
+            Cloud-based data storage.
+        </li>
+
+        <li>
+            AI-based waste identification.
+        </li>
+
+        <li>
+            Automatic alerts when collection bins are full.
+        </li>
+
+        <li>
+            Data analytics and reporting.
+        </li>
+
+        <li>
+            Improved sensor-based classification.
+        </li>
+
+    </ul>
+
+</section>
+
+
+
+<!-- PROJECT STATUS -->
+
+<section id="status">
+
+    <h2>📊 Project Status</h2>
+
+    <div class="status">
+        🚧 Prototype / Development
+    </div>
+
+    <p>
+        The system is being developed and tested as an educational
+        engineering prototype for automated biomedical waste detection,
+        UV sterilization and waste segregation.
+    </p>
+
+</section>
+
+
+
+<!-- AUTHOR -->
+
+<section id="authors">
+
+    <h2>👨‍💻 Project Author</h2>
+
+
+    <div class="author-card">
+
+        <div class="author-icon">
+            👨‍💻
+        </div>
+
+
+        <h3>
+            Vivekanand Raju Keralli
+        </h3>
+
+
+        <div class="author-details">
+
+            <p>
+                <strong>🎓 College:</strong><br>
+                University BDT College of Engineering, Davangere
+            </p>
+
+
+            <p>
+                <strong>📱 Phone:</strong><br>
+                7676496658
+            </p>
+
+
+            <p>
+                <strong>💡 Project Role:</strong><br>
+                Project Developer
+            </p>
+
+
+            <p>
+                <strong>🔧 Project Contribution:</strong><br>
+                Project development, embedded-system implementation,
+                sensor integration, automation and system testing.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONCLUSION -->
+
+<section id="conclusion">
+
+    <h2>📌 Conclusion</h2>
+
+    <p>
+        The proposed automated biomedical waste management system
+        demonstrates how embedded systems, sensors, motor control,
+        conveyor mechanisms and UV sterilization can be combined
+        to develop an educational prototype for automated biomedical
+        waste handling.
+    </p>
+
+    <p>
+        The project provides a foundation for further development
+        using IoT, cloud monitoring, artificial intelligence and
+        improved waste-classification techniques.
+    </p>
+
+</section>
+
 
 </div>
 
 
+
+<!-- FOOTER -->
+
 <footer>
-    <p>© 2026 Automated Biomedical Waste Management Project</p>
-    <p>Arduino • Sensors • Automation • UV Sterilization</p>
+
+    <p>
+        <strong>
+            Automated Biomedical Waste Management
+        </strong>
+    </p>
+
+    <p>
+        Using Arduino and UV Sterilization
+    </p>
+
+    <p>
+        © 2026 Vivekanand Raju Keralli
+    </p>
+
 </footer>
 
+
 </body>
+
 </html>
